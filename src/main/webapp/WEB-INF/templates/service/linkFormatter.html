@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <script src="../../js/lib/jquery-1.11.0.min.js" th:src="@{/js/lib/jquery-1.11.0.min.js}"></script>
+    <script src="../../js/lib/angular.min.js" th:src="@{/js/lib/angular.min.js}"></script>
+</head>
+<body>
+
+    <script th:fragment="linkFormatterModule" type="text/javascript" th:inline="javascript">
+        var linkFormatterModule = angular.module('LinkFormatterModule', []);
+
+        linkFormatterModule.factory('LinkFormatter', [function() {
+
+            format = function(uri) {
+                var baseUri = /*[[@{/}]]*/ '/';
+
+                if (uri.substring(0, 1) == '/') {
+
+                }
+
+                return uri;
+            };
+        }]);
+    </script>
+
+</body>
+</html>
