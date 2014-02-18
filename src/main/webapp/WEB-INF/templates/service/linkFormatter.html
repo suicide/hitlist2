@@ -12,15 +12,16 @@
         var linkFormatterModule = angular.module('LinkFormatterModule', []);
 
         linkFormatterModule.factory('LinkFormatter', [function() {
+            return {
+                format: function(uri) {
+                    var baseUri = /*[[@{/}]]*/ '/';
 
-            format = function(uri) {
-                var baseUri = /*[[@{/}]]*/ '/';
+                    if (uri.substring(0, 1) == '/') {
 
-                if (uri.substring(0, 1) == '/') {
+                    }
 
+                    return uri;
                 }
-
-                return uri;
             };
         }]);
     </script>
